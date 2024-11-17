@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel = "stylesheet" href = "Registration Form.css">
+    <title>Registration Form</title>
+</head>
+<body>
+    
+  <div id="ff-compose"></div>
+    
+  
+<div class="registration-container">
+  <h1>Membership Registration</h1>
+  
+  <form class="registration-form">
+      <div class="form-grid">
+          <div class="form-group">
+              <label for="firstName">First Name</label>
+              <input type="text" id="firstName" required>
+          </div>
+          
+          <div class="form-group">
+              <label for="lastName">Last Name</label>
+              <input type="text" id="lastName" required>
+          </div>
+          
+          <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" required>
+          </div>
+          
+          <div class="form-group">
+              <label for="phone">Phone</label>
+              <input type="tel" id="phone" required>
+          </div>
+          
+          <div class="form-group">
+              <label for="dob">Date of Birth</label>
+              <input type="date" id="dob" required>
+          </div>
+          
+          <div class="form-group">
+              <label for="gender">Gender</label>
+              <select id="gender" required>
+                  <option value="">Select Gender</option>
+                  <option value="male">Male</option>
+                  <option value="female">Female</option>
+                  <option value="other">Other</option>
+              </select>
+          </div>
+          
+          <div class="form-group full-width">
+              <label>Select Membership Plan</label>
+              <div class="membership-options">
+                  <div class="membership-card" onclick="selectPlan(this)">
+                      <h3>Basic</h3>
+                      <div class="price">₹1999/month</div>
+                      <ul>
+                          <li>Access to gym</li>
+                          <li>Basic classes</li>
+                          <li>Locker access</li>
+                      </ul>
+                  </div>
+                  
+                  <div class="membership-card" onclick="selectPlan(this)">
+                      <h3>Premium</h3>
+                      <div class="price">₹2999/month</div>
+                      <ul>
+                          <li>All Basic features</li>
+                          <li>All classes included</li>
+                          <li>Personal trainer</li>
+                      </ul>
+                  </div>
+                  
+                  <div class="membership-card" onclick="selectPlan(this)">
+                      <h3>Elite</h3>
+                      <div class="price">₹3999/month</div>
+                      <ul>
+                          <li>All Premium features</li>
+                          <li>Nutrition consultation</li>
+                          <li>Spa access</li>
+                      </ul>
+                  </div>
+              </div>
+          </div>
+          
+          <div class="form-group full-width">
+              <label for="health">Health Conditions</label>
+              <textarea id="health" rows="4" placeholder="Please mention any health conditions or injuries"></textarea>
+          </div>
+      </div>
+      <label for="psw"><b>Password</b></label>  
+      <input type="password" placeholder="Enter Password" name="psw" required>  
+    
+      <label for="psw-repeat"><b>Re-type Password</b></label>  
+      <input type="password" placeholder="Retype Password" name="psw-repeat" required> 
+      <button type="submit" class="submit-button">Complete Registration</button>
+  </form>
+</div>
+
+<script>
+  function selectPlan(card) {
+      document.querySelectorAll('.membership-card').forEach(c => {
+          c.classList.remove('selected');
+      });
+      card.classList.add('selected');
+  }
+</script>
+</body>
+</html>
